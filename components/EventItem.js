@@ -2,7 +2,7 @@ import Link from "next/link";
 import Image from "next/image";
 import styles from "@/styles/EventItem.module.css";
 
-function EventItem({ evt }) {
+export default function EventItem({ evt }) {
     return (
         <div className={styles.event}>
             <div className={styles.img}>
@@ -19,7 +19,8 @@ function EventItem({ evt }) {
 
             <div className={styles.info}>
                 <span>
-                    {new Date(evt.date).toLocaleString("en-UK")} at {evt.time}
+                    {new Date(evt.date).toLocaleDateString("en-US")} at{" "}
+                    {evt.time}
                 </span>
                 <h3>{evt.name}</h3>
             </div>
@@ -32,5 +33,3 @@ function EventItem({ evt }) {
         </div>
     );
 }
-
-export default EventItem;
