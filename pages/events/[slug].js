@@ -1,6 +1,3 @@
-import { ToastContainer, toast } from "react-toastify";
-import "react-toastify/dist/ReactToastify.css";
-import { FaPencilAlt, FaTimes } from "react-icons/fa";
 import Link from "next/link";
 import Image from "next/image";
 import Layout from "@/components/Layout";
@@ -20,7 +17,7 @@ export default function EventPage({ evt }) {
                     {evt.time}
                 </span>
                 <h1>{evt.name}</h1>
-                <ToastContainer />
+
                 {evt.image && (
                     <div className={styles.image}>
                         <Image
@@ -38,7 +35,7 @@ export default function EventPage({ evt }) {
                 <h3>Venue: {evt.venue}</h3>
                 <p>{evt.address}</p>
 
-                {/* <EventMap evt={evt} /> */}
+                <EventMap evt={evt} />
 
                 <Link href="/events">
                     <a className={styles.back}>{"<"} Go Back</a>
